@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name smallbutton)(type KiCad)(uri ${KIPRJMOD}/../lib/smallbutton.pretty)(options "")(descr ""))
+  (lib (name 33c3_logo)(type KiCad)(uri ${KIPRJMOD}/../lib/33c3_logo.pretty)(options "")(descr ""))
+)
