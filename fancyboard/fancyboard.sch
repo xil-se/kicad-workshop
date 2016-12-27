@@ -30,8 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:stm32
 LIBS:switches
-LIBS:fancyboard-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -65,17 +64,6 @@ F 1 "+3V3" H 8165 1173 50  0000 C CNN
 F 2 "" H 8150 1000 50  0000 C CNN
 F 3 "" H 8150 1000 50  0000 C CNN
 	1    8150 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L AP111733 U1
-U 1 1 5860FD26
-P 1900 3700
-F 0 "U1" H 1900 4067 50  0000 C CNN
-F 1 "AP111733" H 1900 3976 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-223" H 1900 3350 50  0001 C CNN
-F 3 "" H 2000 3450 50  0000 C CNN
-	1    1900 3700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -480,6 +468,118 @@ F 3 "" H 1650 7950 50  0000 C CNN
 	1    1650 7950
 	0    1    1    0   
 $EndComp
+$Comp
+L GND #PWR019
+U 1 1 58618349
+P 2300 7950
+F 0 "#PWR019" H 2300 7700 50  0001 C CNN
+F 1 "GND" V 2305 7822 50  0000 R CNN
+F 2 "" H 2300 7950 50  0000 C CNN
+F 3 "" H 2300 7950 50  0000 C CNN
+	1    2300 7950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +3V3 #PWR020
+U 1 1 5861840C
+P 1400 7950
+F 0 "#PWR020" H 1400 7800 50  0001 C CNN
+F 1 "+3V3" V 1415 8078 50  0000 L CNN
+F 2 "" H 1400 7950 50  0000 C CNN
+F 3 "" H 1400 7950 50  0000 C CNN
+	1    1400 7950
+	0    -1   -1   0   
+$EndComp
+Text Notes 1450 8150 0    60   ~ 0
+Power status LED
+$Comp
+L LED D3
+U 1 1 58621A8C
+P 2100 9050
+F 0 "D3" H 2092 8795 50  0000 C CNN
+F 1 "LED" H 2092 8886 50  0000 C CNN
+F 2 "LEDs:LED_0603" H 2100 9050 50  0001 C CNN
+F 3 "" H 2100 9050 50  0000 C CNN
+	1    2100 9050
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R2
+U 1 1 58621A92
+P 1700 9050
+F 0 "R2" V 1493 9050 50  0000 C CNN
+F 1 "360" V 1584 9050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 1630 9050 50  0001 C CNN
+F 3 "" H 1700 9050 50  0000 C CNN
+	1    1700 9050
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR021
+U 1 1 58621A99
+P 2350 9050
+F 0 "#PWR021" H 2350 8800 50  0001 C CNN
+F 1 "GND" V 2355 8922 50  0000 R CNN
+F 2 "" H 2350 9050 50  0000 C CNN
+F 3 "" H 2350 9050 50  0000 C CNN
+	1    2350 9050
+	0    -1   -1   0   
+$EndComp
+Text Notes 1450 9250 0    60   ~ 0
+LED1 (programmable)
+Text Label 1450 9050 2    60   ~ 0
+LED1
+Text Label 1450 9600 2    60   ~ 0
+BTN1
+$Comp
+L GND #PWR022
+U 1 1 58621ED9
+P 2350 9600
+F 0 "#PWR022" H 2350 9350 50  0001 C CNN
+F 1 "GND" V 2355 9472 50  0000 R CNN
+F 2 "" H 2350 9600 50  0000 C CNN
+F 3 "" H 2350 9600 50  0000 C CNN
+	1    2350 9600
+	0    -1   -1   0   
+$EndComp
+Text Notes 1500 9850 0    60   ~ 0
+BTN1 - Button 1
+Text Notes 950  10000 0    60   ~ 0
+The MCU has programmable pull up resistors
+$Comp
+L SW_Push SW1
+U 1 1 586219E4
+P 1950 9600
+F 0 "SW1" H 2150 9700 50  0000 C CNN
+F 1 "SW_Push" H 1950 9800 50  0000 C CNN
+F 2 "smallbutton:SmallButton" H 1950 9550 50  0001 C CNN
+F 3 "" H 1950 9800 50  0000 C CNN
+	1    1950 9600
+	1    0    0    -1  
+$EndComp
+$Comp
+L STM32F072C8Tx U2
+U 1 1 58624F62
+P 8350 3150
+F 0 "U2" H 8350 5318 50  0000 C CNN
+F 1 "STM32F072C8Tx" H 8350 5227 50  0000 C CNN
+F 2 "Housings_QFP:LQFP-48_7x7mm_Pitch0.5mm" H 8350 5136 50  0000 C CNN
+F 3 "" H 8350 3150 50  0000 C CNN
+	1    8350 3150
+	1    0    0    -1  
+$EndComp
+Text Label 4450 4250 2    60   ~ 0
+LED1
+Text Label 4450 4350 2    60   ~ 0
+BTN1
+NoConn ~ 1500 10500
+NoConn ~ 1500 10700
+Text Notes 1350 10850 0    60   ~ 0
+TODO: Add reset and flash buttons
+Text Label 4450 1750 2    60   ~ 0
+NRST
+Text Label 4450 1950 2    60   ~ 0
+BOOT0
 Wire Wire Line
 	8150 4950 8150 5100
 Wire Wire Line
@@ -643,30 +743,8 @@ Wire Wire Line
 	1450 6800 1550 6800
 Wire Wire Line
 	1800 7950 1900 7950
-$Comp
-L GND #PWR019
-U 1 1 58618349
-P 2300 7950
-F 0 "#PWR019" H 2300 7700 50  0001 C CNN
-F 1 "GND" V 2305 7822 50  0000 R CNN
-F 2 "" H 2300 7950 50  0000 C CNN
-F 3 "" H 2300 7950 50  0000 C CNN
-	1    2300 7950
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2300 7950 2200 7950
-$Comp
-L +3V3 #PWR020
-U 1 1 5861840C
-P 1400 7950
-F 0 "#PWR020" H 1400 7800 50  0001 C CNN
-F 1 "+3V3" V 1415 8078 50  0000 L CNN
-F 2 "" H 1400 7950 50  0000 C CNN
-F 3 "" H 1400 7950 50  0000 C CNN
-	1    1400 7950
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1500 7950 1400 7950
 Wire Notes Line
@@ -707,87 +785,20 @@ Wire Notes Line
 	4650 7400 900  7400
 Wire Notes Line
 	900  7400 900  6100
-Text Notes 1450 8150 0    60   ~ 0
-Power status LED
 Wire Notes Line
 	900  7550 3000 7550
-$Comp
-L LED D3
-U 1 1 58621A8C
-P 2100 9050
-F 0 "D3" H 2092 8795 50  0000 C CNN
-F 1 "LED" H 2092 8886 50  0000 C CNN
-F 2 "LEDs:LED_0603" H 2100 9050 50  0001 C CNN
-F 3 "" H 2100 9050 50  0000 C CNN
-	1    2100 9050
-	-1   0    0    1   
-$EndComp
-$Comp
-L R R2
-U 1 1 58621A92
-P 1700 9050
-F 0 "R2" V 1493 9050 50  0000 C CNN
-F 1 "360" V 1584 9050 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 1630 9050 50  0001 C CNN
-F 3 "" H 1700 9050 50  0000 C CNN
-	1    1700 9050
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1850 9050 1950 9050
-$Comp
-L GND #PWR021
-U 1 1 58621A99
-P 2350 9050
-F 0 "#PWR021" H 2350 8800 50  0001 C CNN
-F 1 "GND" V 2355 8922 50  0000 R CNN
-F 2 "" H 2350 9050 50  0000 C CNN
-F 3 "" H 2350 9050 50  0000 C CNN
-	1    2350 9050
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2350 9050 2250 9050
 Wire Wire Line
 	1550 9050 1450 9050
-Text Notes 1450 9250 0    60   ~ 0
-LED1 (programmable)
-Text Label 1450 9050 2    60   ~ 0
-LED1
 Wire Notes Line
 	3000 7550 3000 8300
 Wire Notes Line
 	3000 8300 900  8300
 Wire Notes Line
 	900  8300 900  7550
-Text Label 1450 9600 2    60   ~ 0
-BTN1
-$Comp
-L GND #PWR022
-U 1 1 58621ED9
-P 2350 9600
-F 0 "#PWR022" H 2350 9350 50  0001 C CNN
-F 1 "GND" V 2355 9472 50  0000 R CNN
-F 2 "" H 2350 9600 50  0000 C CNN
-F 3 "" H 2350 9600 50  0000 C CNN
-	1    2350 9600
-	0    -1   -1   0   
-$EndComp
-Text Notes 1500 9850 0    60   ~ 0
-BTN1 - Button 1
-Text Notes 950  10000 0    60   ~ 0
-The MCU has programmable pull up resistors
-$Comp
-L SW_Push SW1
-U 1 1 586219E4
-P 1950 9600
-F 0 "SW1" H 2150 9700 50  0000 C CNN
-F 1 "SW_Push" H 1950 9800 50  0000 C CNN
-F 2 "smallbutton:SmallButton" H 1950 9550 50  0001 C CNN
-F 3 "" H 1950 9800 50  0000 C CNN
-	1    1950 9600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1750 9600 1450 9600
 Wire Wire Line
@@ -800,27 +811,10 @@ Wire Notes Line
 	3200 10150 900  10150
 Wire Notes Line
 	900  10150 900  8550
-$Comp
-L STM32F072C8Tx U2
-U 1 1 58624F62
-P 8350 3150
-F 0 "U2" H 8350 5318 50  0000 C CNN
-F 1 "STM32F072C8Tx" H 8350 5227 50  0000 C CNN
-F 2 "Housings_QFP:LQFP-48_7x7mm_Pitch0.5mm" H 8350 5136 50  0000 C CNN
-F 3 "" H 8350 3150 50  0000 C CNN
-	1    8350 3150
-	1    0    0    -1  
-$EndComp
-Text Label 4450 4250 2    60   ~ 0
-LED1
-Text Label 4450 4350 2    60   ~ 0
-BTN1
 Wire Wire Line
 	4550 4350 4450 4350
 Wire Wire Line
 	4450 4250 4550 4250
-NoConn ~ 1500 10500
-NoConn ~ 1500 10700
 Wire Notes Line
 	900  10300 3200 10300
 Wire Notes Line
@@ -829,6 +823,15 @@ Wire Notes Line
 	3200 10950 900  10950
 Wire Notes Line
 	900  10950 900  10300
-Text Notes 1350 10850 0    60   ~ 0
-TODO: Add reset and flash buttons
+$Comp
+L LM1117-3.3 U1
+U 1 1 58626B13
+P 1900 3700
+F 0 "U1" H 2000 3450 50  0000 C CNN
+F 1 "LM1117-3.3" H 1900 3950 50  0000 C CNN
+F 2 "" H 1900 3700 50  0000 C CNN
+F 3 "" H 1900 3700 50  0000 C CNN
+	1    1900 3700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
